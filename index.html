@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+
+<!--
+
+      Theme: rawai
+      Author: Svetlana Khannanova  [http://sveta.co]
+      For: Tumblr  [http://tumblr.com/]
+
+-->
+
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>{Title}</title>
+  <link rel="shortcut icon" href="{Favicon}">
+  <link rel="apple-touch-icon" href="{PortraitURL-128}">
+  <!-- 1. Link to jQuery (1.8 or later), -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+  {block:Description}
+  <meta name="description" content="{MetaDescription}">
+  {/block:Description}
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <meta name="color:Body" content="#333">
+  <meta name="color:Links" content="#000">
+  <meta name="color:Hover Links" content="#ccc">
+  <meta name="color:Social Links" content="#000">
+  <meta name="text:Google Web Font" content="">
+  <meta name="text:Article Header Font" content="">
+  <meta name="if:Social Icons" content="0">
+  <meta name="text:Twitter" content="">
+  <meta name="text:Instagram" content="">
+
+  <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.css" rel="stylesheet">
+  {block:ifGoogleWebFont}
+  <link href='http://fonts.googleapis.com/css?family={text:Google Web Font}' rel='stylesheet' type='text/css'>
+  {/block:ifGoogleWebFont}
+  {block:ifArticleHeaderFont}
+  <link rel="stylesheet" href="'http://fonts.googleapis.com/css?family={text:Article Header Font}'">
+  {/block:ifArticleHeaderFont}
+
+
+  <!-- Style -->
+
+  <style>
+
+  /* ==========================================================================
+     CSS Reset (http://meyerweb.com/eric/tools/css/reset/ v2.0)
+     ========================================================================== */
+    html, body, div, span, applet, object, iframe,
+    h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+    a, abbr, acronym, address, big, cite, code,
+    del, dfn, em, img, ins, kbd, q, s, samp,
+    small, strike, strong, sub, sup, tt, var,
+    b, u, i, center,
+    dl, dt, dd, ol, ul, li,
+    fieldset, form, label, legend,
+    table, caption, tbody, tfoot, thead, tr, th, td,
+    article, aside, canvas, details, embed,
+    figure, figcaption, footer, header, hgroup,
+    menu, nav, output, ruby, section, summary,
+    time, mark, audio, video {
+      margin: 0;
+      padding: 0;
+      vertical-align: baseline;
+      border: 0;
+      font: inherit;
+      font-size: 100%;
+    }
+    article, aside, details, figcaption, figure,
+    footer, header, hgroup, menu, nav, section {
+      display: block;
+    }
+    body {
+      line-height: 1;
+    }
+    ol, ul {
+      list-style: none;
+    }
+    blockquote, q {
+      quotes: none;
+    }
+    blockquote:before, blockquote:after,
+    q:before, q:after {
+      content: '';
+      content: none;
+    }
+    table {
+      border-spacing: 0;
+      border-collapse: collapse;
+    }
+    * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing:    border-box;
+      box-sizing:         border-box;
+    }
+
+    /* ==========================================================================
+       Base Styles
+      ========================================================================== */
+    html {
+      font-family: {block:ifGoogleWebFont} '{text:Google Web Font}', {/block:ifGoogleWebFont} serif;
+    }
+
+    body {
+      color: {color:Body};
+      border-top: 3px solid {color:Hover Links};
+    }
+
+    h1 {
+      font-family: Georgia;
+      font-size: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    a {
+      color: {color:Links};
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: {color:Hover Links};
+    }
+
+    .nav__social a {
+        color:{color:Social Links};
+    }
+
+    li {
+        list-style:none;
+    }
+
+    .left {
+      float:left;
+    }
+
+    header {
+      max-width: 81.25rem;
+      position: relative;
+      margin: 3rem auto 0;
+      padding: 0 1rem;
+    }
+
+    .green {
+      color: {color:Hover Links};
+    }
+
+    nav {
+      border-bottom: 1px dotted {color:Hover Links};
+      padding-bottom: 2rem;
+    }
+
+    .nav__social {
+      position: absolute;
+      top: 3.125rem;
+    }
+
+
+
+    .nav__social_links {
+      padding-right: 1rem;
+    }
+
+    .nav__social:last-child {
+      padding-right: 0;
+    }
+
+    .nav__link {
+      width: 20%;
+      font-size: 1.125rem;
+    }
+
+    section {
+      max-width: 81.25rem;
+      margin: auto;
+      padding-bottom: 2rem;
+    }
+
+    article {
+      margin-left: 15rem;
+      padding: 3rem;
+      line-height:1.5;
+      font-size: 1.1rem;
+      max-width: 56rem;
+      border-bottom: 1px dotted {color:Hover Links};
+    }
+
+
+
+    article img, article iframe {
+      max-width: 100%;
+    }
+
+    p a {
+      text-decoration: underline;
+      color: #214583;
+
+    }
+
+    .article__title {
+      font-family: {block:ifArticleHeaderFont} '{text:Article Header Font}', {/block:ifArticleHeaderFont} sans-serif;
+      font-size: 2.25rem;
+      margin-bottom: 1rem;
+    }
+
+    .article__title a:hover {
+      border-bottom: 1px dotted {color:Hover Links};
+    }
+
+    .read-more {
+      padding-top: 2rem;
+    }
+
+    .fotorama {
+      padding: 2rem 1rem;
+    }
+
+    .pagination {
+      padding-bottom: 3rem;
+      padding-left: 3rem;
+      max-width: 50rem;
+      margin: auto;
+      font-size: 1.5rem;
+    }
+
+    .page_next {
+      float: right;
+    }
+
+    .page_back {
+      float: left;
+    }
+
+    .link {
+      border-bottom: 2px solid {color:Hover Links};
+      font-size: 2rem;
+    }
+
+    .last-msg {
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    .footer {
+      text-align: center;
+      padding-top: 1rem;
+    }
+
+    .footer__link {
+      border-bottom: 1px solid {color:Hover Links};
+    }
+
+
+
+  /* RWD */
+
+  @media only screen and (max-width: 40rem) {
+    header {
+      margin-bottom: 0;
+      margin-top: 1rem;
+    }
+
+    h1 {
+      margin-bottom: 4.375rem;
+    }
+
+    nav {
+      padding-bottom: 1rem;
+    }
+
+    .nav__link {
+      width: 50%;
+      padding-bottom: 1rem;
+    }
+
+    article {
+      margin-left: 0;
+      padding: 1.3rem 1rem;
+      line-height: 1.4;
+    }
+
+    .article__title {
+      font-size: 1.375rem;
+      margin-bottom: 0;
+      font-weight: 600;
+    }
+
+    .read-more {
+      padding-top: 0.5rem;
+    }
+
+  }
+
+  @media only screen and (min-width: 40.0625rem) {
+    .nav__social {
+      position: absolute;
+      top: 0;
+      right: 0;
+    }
+  }
+
+  @media only screen and (max-width: 61.25rem) {
+    article {
+      margin-left: 0;
+    }
+  }
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="/">{Title}</a></h1>
+    {block:Description}
+    <p class="description">{Description}</p>
+    {/block:Description}
+    <p class="last-msg"><span id="thnxMsg"></span>!</p>
+    {block:ifSocialIcons}
+      <ul class="nav__social">
+        {block:ifTwitter}
+        <li class="nav__social_links left">
+          <a href="http://twitter.com/{text:Twitter}">
+            <i class="fa fa-twitter fa-2x"></i>
+          </a>
+        </li>
+        {/block:ifTwitter}
+        {block:ifInstagram}
+        <li class="nav__social_links left">
+          <a href="http://instagram.com/{text:Instagram}">
+            <i class="fa fa-instagram fa-2x"></i>
+          </a>
+        </li>
+        {/block:ifInstagram}
+      </ul>
+    {/block:ifSocialIcons}
+
+    <!-- Navigation -->
+    <nav>
+      <ul class="nav__ul">
+        {block:HasPages}
+          {block:Pages}
+          <li class="nav__link left"><a class="nav__anchor" href="{URL}">{Label}</a></li>
+          {/block:Pages}
+        {/block:HasPages}
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Posts -->
+
+  <section>
+    {block:Posts}
+
+      {block:Text}
+      <article>
+        {block:Title}
+        <h2 class="article__title"><a href="{Permalink}">{Title}</a></h2>
+        {/block:Title}
+        {Body}
+        {block:More}
+        <p class="read-more">
+          <a href="{Permalink}">{lang:Read more}</a>
+        </p>
+        {/block:More}
+      </article>
+
+      {/block:Text}
+
+      {block:Video}
+      <article>
+
+       {block:Caption}
+       <h2 class="article__title">
+         {Caption}
+       </h2>
+       {/block:Caption}
+       {Video-700}
+      </article>
+      {/block:Video}
+
+    {block:Link}
+      <article>
+        <a href="{URL}" class="link" {Target}>{Name}</a>
+        {block:Description}
+          <div class="description">{Description}</div>
+        {/block:Description}
+      </article>
+    {/block:Link}
+
+    {/block:Posts}
+
+    <div class="footer">
+      See theme on<a class="footer__link" href="https://github.com/khannanova/rawai">Github</a>
+    </div>
+
+  </section>
+
+
+<!-- Pagination -->
+
+{block:Pagination}
+<div class="pagination">
+  {block:NextPage}
+  <a class="page_next" href="{NextPage}">Вперед&nbsp;<i class="fa fa-angle-right"></i></a>
+  {/block:NextPage}
+  {block:PreviousPage}
+  <a class="page_back" href="{PreviousPage}"><i class="fa fa-angle-left"></i>&nbsp;Назад</a>
+  {/block:PreviousPage}
+</div>
+{/block:Pagination}
+
+</body>
+</html>
