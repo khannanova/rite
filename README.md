@@ -1,4 +1,3 @@
-# rawai
 Tumblr theme
 
 Work in progress
