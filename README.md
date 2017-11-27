@@ -2,4 +2,4 @@ Tumblr theme
 
 Work in progress
 
-See example http://khannanova.tumblr.com/
+See examples http://khannanova.tumblr.com/, http://sinthai.tumblr.com
