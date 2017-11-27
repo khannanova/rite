@@ -8,7 +8,7 @@
 
 -->
 
-<html lang="en">
+<html lang="{block:Russian}ru{/block:Russian}">
 <head>
   <meta charset="UTF-8">
   <title>{Title}</title>
@@ -315,7 +315,7 @@
     {block:Description}
     <p class="description">{Description}</p>
     {/block:Description}
-    <p class="last-msg"><span id="thnxMsg"></span>!</p>
+    <p class="last-msg"><span id="thnxMsg"></span></p>
     {block:ifSocialIcons}
       <ul class="nav__social">
         {block:ifTwitter}
@@ -379,6 +379,8 @@
       </article>
       {/block:Video}
 
+
+
     {block:Link}
       <article>
         <a href="{URL}" class="link" {Target}>{Name}</a>
@@ -390,9 +392,9 @@
 
     {/block:Posts}
 
-    <div class="footer">
-      See theme on<a class="footer__link" href="https://github.com/khannanova/rawai">Github</a>
-    </div>
+<div class="footer">
+  See theme on<a class="footer__link" href="https://github.com/khannanova/rite">Github</a>
+</div>
 
   </section>
 
@@ -410,5 +412,24 @@
 </div>
 {/block:Pagination}
 
+
+<script>
+(function() {
+  var date = new Date();
+
+    date = date.getDay();
+
+    thnxMsg = ["Enjoy the rest of your Sunday!", "Have a nice Monday!", "Have a nice Tuesday!", "Enjoy the rest of your Wednesday!", "Enjoy the rest of your Thursday!", "Have a lovely Friday!", "Have a lovely Saturday!"];
+
+    document.getElementById('thnxMsg').textContent = thnxMsg[date];
+
+    smallThnxMsg[date] = thnxMsg[date].toLowerCase().replace(/\b[a-z]/g, function(letter) {
+      return letter.toUpperCase();
+    });
+
+    document.getElementById('smallThnxMsg').textContent = smallThnxMsg[date];
+
+  }).call(this);
+</script>
 </body>
 </html>
